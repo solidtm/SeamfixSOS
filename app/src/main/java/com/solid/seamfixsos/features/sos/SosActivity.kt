@@ -22,7 +22,7 @@ import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.LocationSettingsStatusCodes
 import com.solid.seamfixsos.data.model.Dto
 import com.solid.seamfixsos.databinding.ActivitySosBinding
-import com.solid.seamfixsos.domain.functional.Result
+import com.solid.seamfixsos.data.remote.api.Result
 import com.solid.seamfixsos.domain.model.Domain
 import com.solid.seamfixsos.features.util.LocationHelper
 import com.solid.seamfixsos.features.util.Permissions
@@ -113,8 +113,10 @@ class SosActivity : AppCompatActivity() {
 
     private fun setUpClicks() {
         with(binding) {
-            sosBtn.setOnClickListener { onPickImageClicked() }
-            locationBtn.setOnClickListener { getCurrentLocation() }
+            sosBtn.setOnClickListener {
+                onPickImageClicked()
+                getCurrentLocation()
+            }
             submitBtn.setOnClickListener {
                 if (::imageString.isInitialized && locationText.text.equals("Location captured")) {
                     val request = Dto.SosRequest(
@@ -126,16 +128,19 @@ class SosActivity : AppCompatActivity() {
                         phoneNumbers = arrayListOf("080333333333", "080444444444")
                     )
                     viewModel.createSos(request)
+
                     lifecycleScope.launch {
                         lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                             viewModel.sosResponse.collect { result ->
                                 when (result) {
                                     is Result.Loading -> {
                                         binding.progressIndicatorSubmit.visibleIf(true)
+                                        binding.submitBtn.text = "Submitting..."
                                     }
 
                                     is Result.Success -> {
                                         binding.progressIndicatorSubmit.gone()
+                                        binding.submitBtn.text = "Submitted."
                                         this@SosActivity.showDialog(
                                             title = "Success",
                                             message = result.data?.message
@@ -145,6 +150,7 @@ class SosActivity : AppCompatActivity() {
 
                                     is Result.Error -> {
                                         binding.progressIndicatorSubmit.gone()
+                                        binding.submitBtn.text = "Submit"
                                         this@SosActivity.showDialog(
                                             title = "Error",
                                             message = result.message
@@ -158,7 +164,7 @@ class SosActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@SosActivity,
-                        "Please capture image and location to continue",
+                        "Complete image and location capture to continue",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -238,12 +244,13 @@ class SosActivity : AppCompatActivity() {
     @RequiresPermission(allOf = [Permissions.ACCESS_COARSE_LOCATION, Permissions.ACCESS_BACKGROUND_LOCATION, Permissions.ACCESS_FINE_LOCATION])
     private fun getLocation() {
         binding.progressIndication.visibleIf(true)
-        binding.locationText.gone()
+        binding.locationText.text = "Capturing current location..."
+
 
         locationHelper.requestLocationUpdate {
 
             locationHelper.getCurrentLocation { latLng, address ->
-                val locationAddress = "Location captured"
+                val locationAddress = "Location captured"  // address ?: latLng
 
                 if (latLng != null) {
                     latLong = latLng

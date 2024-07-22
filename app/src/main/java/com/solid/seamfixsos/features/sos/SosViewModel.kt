@@ -3,7 +3,7 @@ package com.solid.seamfixsos.features.sos
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.solid.seamfixsos.data.model.Dto
-import com.solid.seamfixsos.domain.functional.Result
+import com.solid.seamfixsos.data.remote.api.Result
 import com.solid.seamfixsos.domain.model.Domain
 import com.solid.seamfixsos.domain.repository.SosRepository
 import kotlinx.coroutines.flow.MutableStateFlow

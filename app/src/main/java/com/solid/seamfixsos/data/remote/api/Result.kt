@@ -1,4 +1,4 @@
-package com.solid.seamfixsos.domain.functional
+package com.solid.seamfixsos.data.remote.api
 
 sealed class Result<T>(
     val data: T? = null,
