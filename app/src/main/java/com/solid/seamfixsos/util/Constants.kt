@@ -1,4 +1,4 @@
-package com.solid.seamfixsos.features.util
+package com.solid.seamfixsos.util
 
 object Permissions {
     const val ACCESS_COARSE_LOCATION = "android.permission.ACCESS_COARSE_LOCATION"

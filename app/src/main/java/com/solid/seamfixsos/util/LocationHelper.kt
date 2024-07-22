@@ -1,4 +1,4 @@
-package com.solid.seamfixsos.features.util
+package com.solid.seamfixsos.util
 
 import android.content.Context
 import android.content.ContextWrapper

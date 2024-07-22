@@ -8,7 +8,7 @@ import com.solid.seamfixsos.data.remote.source.SosDataSourceImpl
 import com.solid.seamfixsos.domain.repository.SosRepository
 import com.solid.seamfixsos.domain.repository.SosRepositoryImpl
 import com.solid.seamfixsos.features.sos.SosViewModel
-import com.solid.seamfixsos.features.util.LocationHelper
+import com.solid.seamfixsos.util.LocationHelper
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
