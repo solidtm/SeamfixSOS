@@ -4,7 +4,7 @@
 
 
 SeamfixSOS is an Android application designed to showcase an SOS scenario, that would help in contacting the police or family members, in a situation where you or someone is in distress and unable to make phone calls. 
-It allows users to browse through a list of products and view more information about each product. The app is built entirely using Kotlin and Jetpack Compose for a modern, declarative UI approach.
+It allows users to browse through a list of products and view more information about each product. The app is built entirely using Kotlin and XML.
 
 
 ## Architecture
