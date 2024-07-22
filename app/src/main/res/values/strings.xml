@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SeamfixSOS</string>
+    <string name="sos">SOS</string>
+    <string name="click_to_start_sos_process">Click to start sos process</string>
+    <string name="capture_location">Capture location</string>
+    <string name="take_picture">Take picture</string>
+    <string name="sos_image">sos_image</string>
+    <string name="submit">Submit</string>
+</resources>

@@ -1,0 +1,66 @@
+[versions]
+agp = "8.4.1"
+kotlin = "1.9.0"
+coreKtx = "1.13.1"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+koin = "3.2.0"
+glide = "4.16.0"
+coroutines = "1.8.0"
+junit = "5.9.3"
+mockK = "1.12.5"
+moshi-kotlin = "1.14.0"
+retrofit = "2.9.0"
+okhttp = "5.0.0-alpha.10"
+logging = "4.9.3"
+material_dialog = "3.3.0"
+play_services = "21.3.0"
+
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+# Koin for dependency injection
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+
+# Networking
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi-kotlin" }
+moshi-converter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "logging" }
+
+# Glide for image loading
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+# Coroutines
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Material Dialog
+material-dialog = {group = "com.afollestad.material-dialogs", name = "core", version.ref = "material_dialog"}
+material-bottom-sheet = {group = "com.afollestad.material-dialogs", name = "bottomsheets", version.ref = "material_dialog"}
+
+#play services
+play-services-location = {group = "com.google.android.gms", name = "play-services-location", version.ref = "play_services"}
+
+# Testing
+junit = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
+junit-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+mockK = { group = "io.mockk", name = "mockk", version.ref = "mockK" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
