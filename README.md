@@ -27,7 +27,6 @@ I strive to keep my architecture "perfect" by putting software-design and code q
 
 ### Core:
 - 100% [Kotlin](https://kotlinlang.org/): Ensures modern language features and null safety.
-- 100% [XML](https://developer.android.com/reference/android/util/Xml): Leverages the latest UI features on xml for Android such as view binding, but not the latest UI toolkit(Jetpack compose), this was deliberate and done earlier in the project development in favor of the suggested library for capturing image of the scene.
 - [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html): Simplifies asynchronous programming, making it easier to handle background tasks and manage concurrency.
 - [Kotlin Flow](https://kotlinlang.org/docs/flow.html): Used for reactive programming, handling streams of data efficiently.
 
