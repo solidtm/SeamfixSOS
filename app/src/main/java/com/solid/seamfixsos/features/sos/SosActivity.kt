@@ -238,6 +238,7 @@ class SosActivity : AppCompatActivity() {
     @RequiresPermission(allOf = [Permissions.ACCESS_COARSE_LOCATION, Permissions.ACCESS_BACKGROUND_LOCATION, Permissions.ACCESS_FINE_LOCATION])
     private fun getLocation() {
         binding.progressIndication.visibleIf(true)
+        binding.locationText.gone()
 
         locationHelper.requestLocationUpdate {
 
